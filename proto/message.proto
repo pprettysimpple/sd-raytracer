@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package raytracer_proto;
+
+message Fov {
+  float fov = 1;
+}
+
+message Resolution {
+  uint32 width = 1;
+  uint32 height = 2;
+}
+
+message Vec3 {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message ViewDirection {
+  Vec3 direction = 1;
+}
+
+message Origin {
+  Vec3 origin = 1;
+}
+
+message Operation {
+  oneof operation {
+    Fov set_fov = 1;
+    Resolution set_resolution = 2;
+    ViewDirection set_view_direction = 3;
+    Origin set_origin = 4;
+  }
+}
+
+message RenderRequest {
+  repeated Operation operations = 1;
+}
+
+message RenderResponse {
+  bytes picture_data = 1; // part of jpg/jpeg picture
+}
+
+service Renderer {
+  rpc Render(RenderRequest) returns (stream RenderResponse);
+}
