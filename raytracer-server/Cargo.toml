@@ -3,21 +3,30 @@ name = "raytracer-server"
 version = "0.1.0"
 edition = "2021"
 
+[[example]]
+path = "src/example/client.rs"
+name = "client"
+
 [lib]
 path = "src/lib/mod.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# core thing, using to render scene
 raytracer = { git = "https://github.com/pprettysimpple/raytracer", version = "0.1.0" }
 
+# for protobuf/gRPC and concurrency
 tonic = "0.8.2"
 prost = "0.11"
 tokio = { version = "1.22.0", features = ["rt-multi-thread"] }
 tokio-stream = "0.1.11"
 
+# for anything else
 image = "0.24.5"
 rayon = "1.6.0"
+argparse = "0.2.2"
+log = "0.4.17"
 
 
 [build-dependencies]
