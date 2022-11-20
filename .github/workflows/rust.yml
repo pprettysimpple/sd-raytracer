@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install protobuf
+      run: sudo apt install -y protobuf-compiler
     - name: Build
       run: cargo build --manifest-path=raytracer-server/Cargo.toml --verbose
     - name: Run tests
