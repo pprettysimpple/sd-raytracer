@@ -1,4 +1,4 @@
-![Server](https://github.com/pprettysimpple/sd-raytracer/actions/workflows/server.yml/badge.svg)\
+![Server](https://github.com/pprettysimpple/sd-raytracer/actions/workflows/server.yml/badge.svg)
 
 # sd-raytracer
 
