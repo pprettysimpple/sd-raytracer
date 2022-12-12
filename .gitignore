@@ -1,3 +1,6 @@
 /raytracer-server/target
 /raytracer-server/.idea
 /raytracer-server/Cargo.lock
+/raytracer-client/.idea
+/raytracer-client/.gradle
+/raytracer-client/build

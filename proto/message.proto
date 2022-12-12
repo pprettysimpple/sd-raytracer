@@ -1,9 +1,13 @@
 syntax = "proto3";
 
+option java_multiple_files = true;
+option java_package = "org.raytracer.proto";
+option java_outer_classname = "RendererProto";
+
 package raytracer_proto;
 
 message Fov {
-  float fov = 1;
+  double fov = 1;
 }
 
 message Resolution {
@@ -12,9 +16,9 @@ message Resolution {
 }
 
 message Vec3 {
-  float x = 1;
-  float y = 2;
-  float z = 3;
+  double x = 1;
+  double y = 2;
+  double z = 3;
 }
 
 message ViewDirection {
